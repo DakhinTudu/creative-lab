@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love | A Romantic Surprise</title>
+    
+    <!-- Meta Tags for SEO/Link Preview -->
+    <meta name="description" content="A digital love letter and birthday surprise created with love.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Particle Background -->
+    <canvas id="canvas-particles"></canvas>
+    
+    <!-- Mouse Glow Effect -->
+    <div class="mouse-glow" id="mouse-glow"></div>
+
+    <!-- Background Music (Audio will be initialized via JS for better autoplay control) -->
+    <div class="audio-player">
+        <button class="audio-toggle" id="audio-toggle" title="Toggle Music">
+            <i class="fas fa-music"></i>
+        </button>
+    </div>
+
+    <!-- Section 1: Hero entrance -->
+    <section id="hero">
+        <div class="container text-center" style="z-index: 10;">
+            <div class="animate-up">
+                <h2 style="color: var(--primary-rose); font-style: italic; margin-bottom: 1rem;">Hey Beautiful,</h2>
+                <h1 id="hero-title" style="font-size: clamp(3rem, 10vw, 5rem); margin-bottom: 1.5rem;">Happy Birthday, My Love ❤️</h1>
+                <p id="hero-subtitle" style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 2rem; color: var(--text-muted);">
+                    Today the world celebrates the day it became more beautiful.
+                </p>
+                <div class="btn-group">
+                    <a href="#countdown" class="btn-primary" id="open-heart-btn">Open My Heart</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decoration: Floating hearts will be added via JS -->
+    </section>
+
+    <!-- Section: Countdown (Visible if birthday hasn't started) -->
+    <section id="countdown" class="glass-section">
+        <div class="container text-center">
+            <h2 style="margin-bottom: 3rem;">Counting Down to Your Special Day...</h2>
+            <div class="countdown-timer d-flex justify-content-center" style="display: flex; gap: 20px; justify-content: center;">
+                <div class="glass-card" style="padding: 2rem; min-width: 120px;">
+                    <span id="days" style="display: block; font-size: 2.5rem; font-weight: 700;">00</span>
+                    <label style="font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted);">Days</label>
+                </div>
+                <div class="glass-card" style="padding: 2rem; min-width: 120px;">
+                    <span id="hours" style="display: block; font-size: 2.5rem; font-weight: 700;">00</span>
+                    <label style="font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted);">Hours</label>
+                </div>
+                <div class="glass-card" style="padding: 2rem; min-width: 120px;">
+                    <span id="minutes" style="display: block; font-size: 2.5rem; font-weight: 700;">00</span>
+                    <label style="font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted);">Minutes</label>
+                </div>
+                <div class="glass-card" style="padding: 2rem; min-width: 120px;">
+                    <span id="seconds" style="display: block; font-size: 2.5rem; font-weight: 700;">00</span>
+                    <label style="font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted);">Seconds</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Memory Gallery -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 1rem;">Our Precious Moments</h2>
+            <p class="text-center" style="margin-bottom: 3rem; color: var(--text-muted);">Every picture tells a part of our beautiful story.</p>
+            
+            <div class="gallery-grid">
+                <!-- Polaroid & Glass cards -->
+                <div class="gallery-item glass-card">
+                    <img src="images/birthday/IMG_20260201_173423331_HDR_AE.jpg" alt="Memory 1">
+                </div>
+                <div class="gallery-item glass-card">
+                    <img src="images/birthday/IMG_20260524_121241003_HDR.jpg" alt="Memory 2">
+                </div>
+                <div class="gallery-item glass-card">
+                    <img src="images/birthday/IMG_20260524_130002016_HDR_PORTRAIT.jpg" alt="Memory 3">
+                </div>
+                <div class="gallery-item glass-card">
+                    <img src="images/birthday/IMG_3146.jpg" alt="Memory 4">
+                </div>
+                <div class="gallery-item glass-card">
+                    <img src="images/birthday/IMG_20260524_171548195_HDR_PORTRAIT.jpg" alt="Memory 5">
+                </div>
+                <div class="gallery-item glass-card">
+                    <img src="images/birthday/IMG_20260524_171807291_HDR_PORTRAIT.jpg" alt="Memory 6">
+                </div>
+                <div class="gallery-item glass-card">
+                    <img src="images/birthday/IMG_20260524_173943783_HDR_PORTRAIT.jpg" alt="Memory 7">
+                </div>
+                <div class="gallery-item glass-card">
+                    <img src="images/birthday/IMG_20260524_131210736.jpg" alt="Memory 8">
+                </div>
+                <div class="gallery-item glass-card">
+                    <img src="images/birthday/photoesg.png" alt="Memory 9">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Love Story Timeline -->
+    <section id="timeline-sec" style="background: linear-gradient(to bottom, #FFF9F9, #fdeceb);">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 3rem;">How it All Started</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item left animate-up">
+                    <div class="timeline-content">
+                        <h3>The Day We Met</h3>
+                        <p>The universe connected our paths, and life was never the same again.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right animate-up">
+                    <div class="timeline-content">
+                        <h3>First Conversation</h3>
+                        <p>Hours felt like minutes as we discovered the magic in each other's words.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left animate-up">
+                    <div class="timeline-content">
+                        <h3>First Laugh Together</h3>
+                        <p>That beautiful sound became my favorite melody in the whole world.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right animate-up">
+                    <div class="timeline-content">
+                        <h3>Our Favorite Memory</h3>
+                        <p>Lost in time, found in love. A moment frozen in perfection.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left animate-up">
+                    <div class="timeline-content">
+                        <h3>Today – Your Birthday</h3>
+                        <p>Celebrating the most special person I know. Happy Birthday!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Birthday Letter -->
+    <section id="letter-sec">
+        <div class="container">
+            <div class="glass-card" style="max-width: 800px; margin: 0 auto; padding: 4rem 3rem; background: white; border: 1px solid #f1dedc;">
+                <h2 style="font-family: var(--font-letter); font-size: 3rem; margin-bottom: 2rem; color: var(--primary-rose);">To My Dearest...</h2>
+                <div id="typewriter-text" style="font-family: var(--font-letter); font-size: 1.8rem; line-height: 1.8; color: #444;">
+                    <!-- Text will be typed here by JS -->
+                </div>
+                <div class="text-right" style="text-align: right; margin-top: 2rem; font-family: var(--font-letter); font-size: 2rem; color: var(--primary-rose);">
+                    With all my love, <br> Forever Yours. ❤️
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Reasons Why -->
+    <section id="reasons-sec">
+        <div class="container">
+            <h2 class="text-center" style="margin-bottom: 4rem;">Reasons Why You Are Special</h2>
+            
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-card-inner">
+                        <div class="reason-card-front glass-card">
+                            <i class="fas fa-smile-wink" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-rose);"></i>
+                            <h3>Your Smile</h3>
+                        </div>
+                        <div class="reason-card-back">
+                            <p>Your smile is like a sunrise that brightens even my darkest days. It's the most beautiful thing I've ever seen.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-card-inner">
+                        <div class="reason-card-front glass-card">
+                            <i class="fas fa-heart" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-rose);"></i>
+                            <h3>Your Kindness</h3>
+                        </div>
+                        <div class="reason-card-back">
+                            <p>The way you care for everyone around you inspires me to be a better person every single day.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-card-inner">
+                        <div class="reason-card-front glass-card">
+                            <i class="fas fa-sparkles" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-rose);"></i>
+                            <h3>Your Presence</h3>
+                        </div>
+                        <div class="reason-card-back">
+                            <p>Just being near you makes ordinary moments feel extraordinary. You are my home and my adventure.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reason-card">
+                    <div class="reason-card-inner">
+                        <div class="reason-card-front glass-card">
+                            <i class="fas fa-star" style="font-size: 3rem; margin-bottom: 1rem; color: var(--primary-rose);"></i>
+                            <h3>Your Soul</h3>
+                        </div>
+                        <div class="reason-card-back">
+                            <p>You have a mind that fascinates me and a heart that I'm so lucky to hold. You are one in a billion.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Surprise Box -->
+    <section id="surprise-sec" style="background: #FFF9F9;">
+        <div class="container text-center">
+            <h2 style="margin-bottom: 4rem;">I Have One More Small Surprise...</h2>
+            
+            <div style="display: flex; justify-content: center;">
+                <div class="gift-container" id="gift-container">
+                    <div class="gift-box-lid"></div>
+                    <div class="gift-box"></div>
+                    <div class="surprise-content">
+                        <div class="glass-card" style="padding: 2rem; border-color: var(--gold-solid);">
+                            <h3>A Hidden Note</h3>
+                            <p style="margin-top: 1rem;">"You are the best gift life has ever given me. Check your phone for your real gift! 🎁"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p id="click-box-text" style="margin-top: 3rem; color: var(--text-muted); font-style: italic;">Tap the box to open it</p>
+        </div>
+    </section>
+
+    <!-- Section 7: Final Ending -->
+    <section id="final-sec" style="background: linear-gradient(to top, var(--secondary-pink), var(--bg-white));">
+        <div class="container text-center">
+            <div class="animate-up">
+                <i class="fas fa-heart floating" style="font-size: 4rem; color: var(--primary-rose); margin-bottom: 2rem;"></i>
+                <h2 style="max-width: 800px; margin: 0 auto 3rem; line-height: 1.4;">
+                    "Out of billions of people in this world, my favorite place has always been beside you."
+                </h2>
+                <h1 style="font-size: 3rem; margin-bottom: 1rem;">Happy Birthday, My Beautiful Girl.</h1>
+                <p style="font-size: 1.2rem; color: var(--text-dark); opacity: 0.8;">Thank you for making my life brighter every day.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
